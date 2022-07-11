@@ -1,6 +1,5 @@
 .sidebar{
     background-color: #27DB8F;
-    height: 100vh;
 }
 
 
@@ -13,9 +12,8 @@
 }
 
 .sidebar{
-
     background-image: url("/static/autenticacao/img/fundo_background.png");
-
+    background-repeat: no-repeat!important;
 }
 
 .area_cadastrar{
@@ -56,4 +54,17 @@
     background-color: #27DB8F;
     color: white;
     font-weight: bold;
+}
+
+@media screen and (max-width: 767px){
+    .sidebar{
+        height: max-content;
+    }    
+}
+
+@media screen and (min-width: 768px)
+{
+    .sidebar{
+        height: 100vh;
+    }
 }

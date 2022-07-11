@@ -12,19 +12,19 @@ Cadastro - NutriLab
 {% block 'body' %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 sidebar">
+            <div class="col-md-3 sidebar order-2 order-md-1">
                 <div class="logo_sidebar">                   
                     <h2 class="logo">
                         <img class="img_logo_sidebar" src="{% static 'autenticacao/img/logo_nutri_lab.png' %}">
                     </h2>
                 </div>              
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 mb-5 order-1 order-md-2">
                 <div class="area_cadastrar">
                     {% if messages %}
                         <br>
                         {% for message in messages %}
-                            <div class="alert {{ message.tags }}">
+                            <div id="msg" class="alert {{ message.tags }}">
                                 {{ message }}
                             </div>
                         {% endfor %}
@@ -57,15 +57,12 @@ Cadastro - NutriLab
                         <br>
                         <button class="btn-first">Registrar</button>
                     </form>
-                    <h3 style="position: absolute; bottom: 65px; font-weight: bold">Já possui uma conta? <a href="{% url 'logar' %}" class="btn btn-outline-success btn-lg">Logar</a> </h3>
+                    <div class="text-center mt-5">
+                        <h3 style="font-weight: bold">Já possui uma conta? </h3>
+                        <a href="{% url 'logar' %}" class="btn btn-outline-success btn-lg mt-3">Logar</a>
+                    </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
-
-
 {% endblock %}

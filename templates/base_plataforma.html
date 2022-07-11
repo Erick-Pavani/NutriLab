@@ -2,40 +2,54 @@
 {% load static %}
 
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'plataforma/css/css.css' %}">
-<link rel="stylesheet" href="{% static 'plataforma/css/plano_alimentar.css' %}">
+    <link rel="stylesheet" href="{% static 'plataforma/css/css.css' %}">
+    <link rel="stylesheet" href="{% static 'plataforma/css/plano_alimentar.css' %}">
 {% endblock %}
 
 {% block 'body' %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
-                <a href="{% url 'pacientes' %}" class="link-lateral">
-                    <div class="card-lateral">
-                        <img src="{% static 'plataforma/img/paciente.png' %}">
-                        <br>
-                        <br>
-                        <h3>Gerenciar Pacientes</h3>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-sm-4 col-lg-12">
+                        <a href="{% url 'pacientes' %}" class="link-lateral">
+                            <div class="card-lateral"  style="min-height: 90%!important; max-height: 90%!important;">
+                                <img src="{% static 'plataforma/img/paciente.png' %}">
+                                <br>
+                                <br>
+                                <h3>
+                                    Gerenciar pacientes
+                                </h3>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="{% url 'dados_paciente_listar' %}" class="link-lateral">
-                    <div class="card-lateral">
-                        <img src="{% static 'plataforma/img/dados_paciente.png' %}">
-                        <br>
-                        <br>  
-                        <h3>Dados do Pacientes</h3>
+                    <div class="col-sm-4 col-lg-12">
+                        <a href="{% url 'dados_paciente_listar' %}" class="link-lateral">
+                            <div class="card-lateral" style="min-height: 90%!important; max-height: 90%!important;">
+                                <img src="{% static 'plataforma/img/dados_paciente.png' %}">
+                                <br>
+                                <br>  
+                                <h3>
+                                    Dados dos pacientes
+                                </h3>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="{% url 'plano_alimentar_listar' %}" class="link-lateral">
-                    <div class="card-lateral">
-                        <img src="{% static 'plataforma/img/plano_alimentar.png' %}">
-                        <br>
-                        <br>
-                        <h3>Plano alimentar</h3>
+                    <div class="col-sm-4 col-lg-12">
+                        <a href="{% url 'plano_alimentar_listar' %}" class="link-lateral">
+                            <div class="card-lateral" style="min-height: 90%!important; max-height: 90%!important;">
+                                <img src="{% static 'plataforma/img/plano_alimentar.png' %}">
+                                <br>
+                                <br>
+                                <h3>
+                                    Plano alimentar
+                                </h3>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-9">
                 {% block 'plataforma' %}
                 {% endblock %}
             </div>

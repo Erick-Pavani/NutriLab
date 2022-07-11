@@ -1,33 +1,36 @@
 {% extends 'base_plataforma.html' %}
 {% load static %}
 
+{% block 'titulo' %}
+Pacientes - NutriLab
+{% endblock %}
+
 {% block 'plataforma' %}
     {% if messages %}
         <br>
         {% for message in messages %}
-            <div class="alert {{message.tags}}">
+            <div id="msg" class="alert {{message.tags}}">
                 {{message}}
             </div>
         {% endfor %}
     {% endif %}
     <br>
-	<h1 class="titulo">Escolha o paciente</h1>
-    <div  class="row">
+	<h1 class="titulo mb-4">Escolha o paciente</h1>
+    <div class="row align-items-center justify-content-center mb-lg-4">
         {% for paciente in pacientes %}
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-10">
                 <a href="{% url 'plano_alimentar' paciente.id %}" class="link-hover">
-                    <div class="card-paciente">
+                    <div class="card-paciente mb-lg-0 mb-4 mt-3">
                         <div class="foto-perfil">
                             {% if paciente.sexo == "F" %}
-                                <img src="{% static 'plataforma/img/perfil1.png' %}">
+                                <img src="{% static 'plataforma/img/perfil1.png' %}" class="img-fluid">
                             {% else %}
-                                <img src="{% static 'plataforma/img/perfil2.png' %}">
+                                <img src="{% static 'plataforma/img/perfil2.png' %}" class="img-fluid">
                             {% endif %}
                         </div>
                         <br>
-                        <p class="dados">{{ paciente.nome }}</p>
-                        <p class="dados">{{ paciente.idade }} anos</p>
-                        <p class="dados">{{ paciente.email }}</p>
+                        <p class="dados text-center">{{ paciente.nome }}</p>
+                        <p class="dados text-center">{{ paciente.idade }} anos</p>
                     </div>
                 </a>
             </div>
